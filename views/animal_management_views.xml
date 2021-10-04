@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="animal_management_view_tree" model="ir.ui.view">
+        <field name="name">animal.management.view.tree</field>
+        <field name="model">animal.management</field>
+        <field name="arch" type="xml">
+            <tree string="Animal Management">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="animal_management_view_form" model="ir.ui.view">
+        <field name="name">animal.management.view.form</field>
+        <field name="model">animal.management</field>
+        <field name="arch" type="xml">
+            <form string="Animal Management">
+                <group>
+                    <field name="name"/>
+                    <field name="date_of_birth"/>
+                    <field name="animal_category"/>
+                </group>
+
+            </form>
+        </field>
+    </record>
+
+    <record id="animal_management_action" model="ir.actions.act_window">
+        <field name="name">Animal Management</field>
+        <field name="res_model">animal.management</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create new Animal
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="animal_management_menu" name="Animal List" parent="animal_management_root" action="animal_management_action" sequence="1"/>
+
+
+</odoo>

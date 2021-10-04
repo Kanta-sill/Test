@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="animal_management_category_view_tree" model="ir.ui.view">
+        <field name="name">animal.management.category.view.tree</field>
+        <field name="model">animal.management.category</field>
+        <field name="arch" type="xml">
+            <tree string="Animal Category">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="animal_management_category_view_form" model="ir.ui.view">
+        <field name="name">animal.management.category.view.form</field>
+        <field name="model">animal.management.category</field>
+        <field name="arch" type="xml">
+            <form string="Animal Category">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="icon" widget="image"/>
+                        <field name="animal_ids" widget="many2many_tags"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="animal_management_category_action" model="ir.actions.act_window">
+        <field name="name">Animal Category</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">animal.management.category</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create new Category
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="animal_management_category_menu" name="Animal Category" parent="animal_management_root" action="animal_management_category_action" sequence="2"/>
+
+</odoo>

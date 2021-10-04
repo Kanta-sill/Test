@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_animal_management,animal_management.animal_management,model_animal_management,,1,1,1,1
+access_animal_management_category,animal_management.animal_management_category,model_animal_management_category,,1,1,1,1
